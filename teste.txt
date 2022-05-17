@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://pyscript.net/alpha/pyscript.css" />
+    <script defer src="https://pyscript.net/alpha/pyscript.js"></script>
+     <!-- Bootstrap CSS -->
+     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Python Script</title>
+</head>
+<body>
+    <h1>Enviar e-mail <span id="nm_user"></span></h1>
+
+    <form onsubmit="return false">
+        <label for="name">Nome:</label><br>
+        <input type="text" id="insr_name" name="name" value="Ethan Hunt"><br>
+
+        <select name="countries" id="slc_countries">
+            <option value="India">Brasil</option>
+            <option value="Germany">Nigéria</option>
+            <option value="Netherlands">China</option>
+        </select><br>
+
+        <input pys-onClick="sub" type="submit" id="btn-form" value="submit">
+    </form> 
+
+    <p id="exb_place"></p>
+
+    <py-script>
+        def subm(*args,**kwargs):
+            output = Element("exb_place")
+            output.write(f"{Element('insr_name').value} é um cara legal de {Element('countries').value}")
+            pyscript.write('nm_user', Element('inst_name').value)
+    </py-script>
+
+    <script src="https://kit.fontawesome.com/99f69d2ac7.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+</html>
